@@ -1,0 +1,11 @@
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\webCrawler.exe.config
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\obj\Debug\webCrawler.csprojResolveAssemblyReference.cache
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\obj\Debug\webCrawler.MainForm.resources
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\obj\Debug\webCrawler.csproj.GenerateResource.Cache
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\webCrawler.exe
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\webCrawler.pdb
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\obj\Debug\webCrawler.exe
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\obj\Debug\webCrawler.pdb
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\HtmlAgilityPack.dll
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\HtmlAgilityPack.pdb
+F:\study\4th year\hurry\3rd semester\network programming\2nd homework\webCrawler\webCrawler\bin\Debug\HtmlAgilityPack.xml

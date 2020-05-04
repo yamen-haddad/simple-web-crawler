@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shaghelni</title>
+
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/myStyle.css">
+    <link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/colors/green.css" id="colors">
+<link rel="stylesheet" type="text/css" href="http://localhost/shaghelni-27-5/public/css/form-style.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/bootstrap.min.css">
+<!--<link rel="stylesheet" type="text/css" href="public/css/style.css">
+<!-- jQuery -->
+    <!--<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.js"></script>-->
+    <script src="http://localhost/shaghelni-27-5/public/scripts/jquery.min.js"></script>
+    <!-- our JavaScript -->
+    <script src="http://localhost/shaghelni-27-5/public/scripts/jobs.js"></script>
+    <script type="text/javascript" src="http://localhost/shaghelni-27-5/public/scripts/LoginScript.js"></script>
+    <script type="text/javascript" src="http://localhost/shaghelni-27-5/public/scripts/baraa.js"></script>
+    <!--<script src="http://localhost/shaghelni-27-5/public/scripts/yamenjquery.js"></script> -->
+    <script src="http://localhost/shaghelni-27-5/public/scripts/jquery-1.12.4.min.js"></script>
+
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="http://localhost/shaghelni-27-5//jobseeker/showMyResume ">View Profile</a>
+    <a href="#">Edite Profile</a>
+    <a href="http://localhost/shaghelni-27-5//user/logOut">Log Out</a>
+    </div>
+   <div id="register">
+    <div class="animate">
+        <div class="form-navigator">
+            <span id="login-span" onclick="showLogin()">Login</span>
+        </div>
+        <div class="form-container">
+            <form id="login-form" class="form-content " action="http://localhost/shaghelni-27-5//user/logIn" method="post" onsubmit="return signInCheck()">
+                <span class="close" onclick="document.getElementById('register').style.display='none';">&times;</span>
+                <label>Email:</label>
+                <input class="form-group" id="email" type="email" name="email" placeholder="Enter username" required="">
+                <span class="fnote" id="emailNote"></span>
+                <label>Password: </label>
+                <input class="form-group" id="password" type="password" placeholder="*****" name="password" required="">
+                <span class="fnote" id="passwordNote"></span>
+                <input type="checkbox" check="checked" name="remember" style="float: left;"> <span>Remember me</span>
+                <button id="submit" type="submit">login</button>
+                <div class="" style="background-color:#f1f1f1">
+                    <span class="psw"><a href="#">Forgot password?</a></span>
+                    <button><span class="psw" style="float: left" onclick="chose()"><a href="#">Register</a></span></button>
+
+                    <button class="userType" style="display: none"><a href="http://localhost/shaghelni-27-5//company/showSignUp">Company</a>
+                    </button>
+                    <button class="userType" style="display: none"><a href="http://localhost/shaghelni-27-5//jobseeker/showsignup">Job
+                            Seeker</a></button>
+
+                </div>
+            </form>
+
+            <!-- the sign up form--!>
+<!--    <form id="signup-form" class="form-content" action="http://localhost/shaghelni-27-5//user/signUp" method="post">
+        <span class="close" onclick="document.getElementById('register').style.display='none'">&times;</span>
+        <label>User Name:</label>
+        <input class="form-group" type="text" name="name" placeholder="Enter username" required>
+        <label>Password: </label>
+        <input class="form-group" type="password" placeholder="*****" name="password" required>
+        <label>Repeat Password: </label>
+        <input class="form-group" type="email" placeholder="email" name="email" required>
+        <button id="submit" type="submit">Sign Up</button>
+    </form>-->
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+
+
+    <!-- Header
+    ================================================== -->
+    <header class="transparent sticky-header full-width">
+        <div class="container">
+            <div class="sixteen columns">
+
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="http://localhost/shaghelni-27-5/home/index "><img src="http://localhost/shaghelni-27-5/public/images/logo2.png" alt="shaghelni"></a></h1>
+                </div>
+
+                <!-- Menu -->
+                <nav id="navigation" class="menu">
+                    <ul id="responsive">
+
+                        <li><a href="http://localhost/shaghelni-27-5/home/index " id="current">Home</a>
+
+                        </li>
+
+                        <li><a href="#">My Account</a>
+                            <ul>
+                                <li><a href="http://localhost/shaghelni-27-5/jobseeker/showresume&par1=">Edit Account</a></li>
+                                <li><a href="http://localhost/shaghelni-27-5/user/show">My Account</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">For Seekers</a>
+                            <ul>
+                                <li><a href="http://localhost/shaghelni-27-5/jobseeker/showMyResume ">Show Resume</a></li>
+                                <li><a href="http://localhost/shaghelni-27-5/apportunity/showGrid ">Browse Jobs</a></li>
+                                <li><a href="http://localhost/shaghelni-27-5/jobseeker/browseApps ">Browse Applications</a></li>
+           
+                            </ul>
+                        </li>
+
+                        <li><a href="#">For Employers</a>
+                           <ul>
+                                <li><a href="http://localhost/shaghelni-27-5/apportunity/showaddjobform ">Add Job</a></li>
+                                <li><a href="http://localhost/shaghelni-27-5/company/manageJobs ">Manage Jobs</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="blog.html">Contact Us</a></li>
+                    </ul>
+
+
+                    <ul class="float-right">
+                                                    <li><a style="cursor: pointer;" onclick="showRegister()"><i class="fa fa-user">Sign Up / Log In</i></a></li>
+                                                    
+                    </ul>
+
+
+                </nav>
+
+
+            </div>
+        </div>
+    </header>
+        <div class="clearfix"></div>
+<!-- Banner
+================================================== -->
+<div id="banner" class="with-transparent-header parallax background" style="background-image: url(http://localhost/shaghelni-27-5/public/images/banner-home-02.jpg)" data-img-width="2000" data-img-height="1330" data-diff="300">
+	<div class="container">
+		<div class="sixteen columns">
+			
+			<div class="search-container">
+
+				<!-- Form -->
+				<h2>Find job</h2>
+                                <form action="http://localhost/shaghelni-27-5/apportunity/search" method="get" onsubmit="return searchCheck()">
+                                    <select name="type" id="typeSelect" onchange="showCriteria(this.value)">
+                                        <option value="-1">What you are searching for:
+                                        <option value="jobseeker">Search for Jobs
+                                        <option value="apportunity">Search for Employees
+                                    </select>
+                                    <select name="criteria" id="criteriaSelect" onchange="showPlaceHolder(this.value)">
+                                        <option value="-1">Select a criteria:
+                                        <option value="0">City
+                                        <option value="1">Country
+                                        <option value="2">Category
+                                    </select>
+
+                                    <input name="title" id="title" onkeyup="autocomplet(this.value,0)" type="text" class="ico-01" placeholder="job title" value="">
+                                    <!--<input name="city" id="city" onkeyup="autocomplet(this.value,1)" type="text" class="ico-02" placeholder="city, province or region" value=""/>
+                                    -->
+
+                                    <button type="submit" class="glyphicon glyphicon-search"><small style="font-size: 11px;"></small></button>
+                                  <!--  <div>
+                                    <input class="typeCheckBox" type="checkbox" name="type" value="jobseeker" ><span class="typeCheckBoxLabel">search for apllicants</span>
+                                    <input class="typeCheckBox" type="checkbox" name="type" value="apportunity" checked><span class="typeCheckBoxLabel">search for jobs</span>
+                                    </div>
+                                    -->
+
+                                    <!-- Browse Jobs -->
+
+				
+				<!-- Announce -->
+	
+
+			</div>
+
+		</div>
+	</div>
+</div>
+    <!-- Apportunity Posts As Grid-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="margin-bottom-25">Recent Job Apportunities</h1>
+                </div>
+            </div>
+                <div class="row">
+                
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">site engineer</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-04-03</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-04-06</span>
+
+                </div>
+                <p>resp bla bla</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/3 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">farmer</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-06-01</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-06-30</span>
+
+                </div>
+                <p>swim</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/12 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">General manager</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-04-03</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-05-30</span>
+
+                </div>
+                <p>resp bla bla</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/4 " class="button">Read More</a>
+            </div>
+
+</div>            </div>
+                        <div class="row">
+                
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">smuggler</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-06-01</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-06-20</span>
+
+                </div>
+                <p>drugs and weapons</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/8 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">communication engineer</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-04-10</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-04-25</span>
+
+                </div>
+                <p>asd sadfasdfas sadfasf</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/6 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">swimming coach</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-06-01</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-06-30</span>
+
+                </div>
+                <p>swim</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/9 " class="button">Read More</a>
+            </div>
+
+</div>            </div>
+                        <div class="row">
+                
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">accountant</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-04-10</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-04-18</span>
+
+                </div>
+                <p>asd sdasfsa dsfaf</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/7 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">professor</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-06-01</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-06-30</span>
+
+                </div>
+                <p>swim</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/10 " class="button">Read More</a>
+            </div>
+
+</div>        
+<div class="col-sm-4">
+                <!-- Post  -->
+            <div class="recent-post">
+                <div class="recent-post-img"><a href="blog-single-post.html"><img src="http://localhost/shaghelni-27-5/public/images/logoSmall.gif">
+   
+
+                </a></div>
+                <h3>
+                <a href="blog-single-post.html">seller</a>
+                </h3>
+                <div class="meta-tags">
+                    <span>Open Date:2017-06-01</span>
+
+                </div>
+                <div class="meta-tags">
+                    <span>Close Date:2017-06-30</span>
+
+                </div>
+                <p>swim</p>
+                <a href="http://localhost/shaghelni-27-5/apportunity/show/11 " class="button">Read More</a>
+            </div>
+
+</div>            </div>
+                        <!--close for the last row of posts-->
+        </div>
+    
+           <!--close for whole posts container-->
+    </div>
+            <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+    <ul class="pagination">
+                       <li class="active"><a href="#"> 0</a></li>
+                       <li><a href="#"> 1</a></li>
+                            <li><a href="#"> 2</a></li>
+                </ul>
+                <div class="col-sm-4"></div>
+            </div>
+    
+
+<!-- Footer
+================================================== -->
+<div class="margin-top-15"></div>
+
+<div id="footer">
+    <!-- Main -->
+    <div class="container ">
+
+        <div class="three columns">
+            <h4>Seekers</h4>
+            <ul class="footer-links">
+                <li><a href="http://localhost/shaghelni-27-5/jobseeker/showMyResume ">Profile</a></li>
+                <li><a href="http://localhost/shaghelni-27-5/jobseeker/showresume/">Edit Account</a></li>
+                <li><a href="http://localhost/shaghelni-27-5/apportunity/showGrid ">Browse Jobs</a></li>
+                <li><a href="http://localhost/shaghelni-27-5/user/logOut">Log Out</a></li>
+
+
+            </ul>
+        </div>
+
+
+        <div class="three columns">
+            <h4>Companies</h4>
+            <ul class="footer-links">
+                <li><a href="http://localhost/shaghelni-27-5/apportunity/showaddjobform ">Add Job</a></li>
+                <li><a href="http://localhost/shaghelni-27-5/company/manageJobs ">Manage Jobs</a></li>
+
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+</div>
+<!-- Wrapper / End -->
+
+<!--the hidden data to connect php to js-->
+<div id="hiddenData" style="display: none">
+    http://localhost/shaghelni-27-5/</div>
+<!-- Scripts
+================================================== -->
+<!--<script src="http://localhost/shaghelni-27-5/public/scripts/jquery-2.1.3.min.js"></script> -->
+<script src="http://localhost/shaghelni-27-5/public/scripts/custom.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.superfish.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.themepunch.tools.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.themepunch.revolution.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.themepunch.showbizpro.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.flexslider-min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/chosen.jquery.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.magnific-popup.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/waypoints.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.counterup.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery.jpanelmenu.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/stacktable.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/headroom.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/notifIt.min.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/slide-from-top.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/jquery-ui.js"></script>
+<!--<script src="http://localhost/shaghelni-27-5/public/scripts/jquery-1.12.4.min.js"></script>-->
+<script src="http://localhost/shaghelni-27-5/public/scripts/slidingnav.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/yamenjquery.js"></script>
+<script src="http://localhost/shaghelni-27-5/public/scripts/autocomplete.js"></script>
+<link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/jquery-ui.css">
+<link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/notifIt.css">
+<link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/slidingnav.css">
+<!-- bootstrap-->
+<link rel="stylesheet" href="http://localhost/shaghelni-27-5/public/css/bootstrap.css">
+<script src="http://localhost/shaghelni-27-5/public/js/bootstrap.js"></script>
+<!--<script src="public/scripts/formvalidation.js"></script> -->
+
+
+
+
+
+</body>
